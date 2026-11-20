@@ -1,0 +1,26 @@
+# Local environments, dependencies, caches, credentials, and generated files
+.DS_Store
+Thumbs.db
+__MACOSX/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+node_modules/
+venv/
+.venv/
+__pycache__/
+.pytest_cache/
+.cache/
+dist/
+build/
+coverage/
+*.zip
+*.tar.gz
+*.tmp
+*.bak
+*.swp
+.vscode/
+.idea/

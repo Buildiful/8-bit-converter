@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173954">
+  <meta name="description" content="Turn photos into nostalgic pixel art with the free 8-Bit Converter by Buildiful®. Your images stay on your device.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="8-Bit Converter by Buildiful®">
+  <meta property="og:description" content="Your photos. Retro pixels. No uploads.">
+  <meta property="og:url" content="https://buildiful.github.io/8-bit-converter/">
+  <link rel="canonical" href="https://buildiful.github.io/8-bit-converter/">
+  <link rel="icon" href="./assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>8-Bit Converter by Buildiful®</title>
+  <script src="./js/buildiful-analytics-v2.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="https://buildiful.com/" aria-label="Buildiful website">
+        <img src="./assets/buildiful-logo-white.png" alt="Buildiful®" width="192" height="54">
+      </a>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="app-name">8-Bit Converter</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="top-heading">
+      <div>
+        <p class="eyebrow"><span class="pixel-icon" aria-hidden="true">✦</span> INSERT IMAGE → GET PIXELS</p>
+        <h1>Make it <span class="accent">retro.</span></h1>
+      </div>
+      <div class="heart" aria-hidden="true">♥</div>
+    </div>
+
+    <section class="workspace" aria-label="Pixel art converter">
+      <div id="dropZone" class="upload-area" role="group" aria-label="Image upload">
+        <label class="button button-blue upload-button" for="fileInput"><span aria-hidden="true">↑</span> Choose image</label>
+        <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" aria-label="Choose a PNG, JPEG, or WebP image">
+        <p class="upload-hint" id="uploadHint">or drop one here · PNG / JPG / WEBP</p>
+        <p class="file-name" id="fileName" aria-live="polite"></p>
+      </div>
+
+      <div class="options" aria-label="Conversion settings">
+        <div class="option">
+          <div class="option-heading"><label for="detail">Pixel detail</label><output id="detailValue" for="detail">64 px</output></div>
+          <input type="range" id="detail" min="32" max="128" step="16" value="64" aria-label="Longest pixel-art dimension">
+          <div class="range-labels"><span>CHUNKY</span><span>FINE</span></div>
+        </div>
+        <div class="option">
+          <label for="palette">Color palette</label>
+          <select id="palette">
+            <option value="arcade">Arcade · 256</option>
+            <option value="classic">Classic · 16</option>
+            <option value="sunset">Pastel · 12</option>
+            <option value="gameboy">Handheld · 4</option>
+          </select>
+        </div>
+        <label class="dither-option"><input type="checkbox" id="dither"><span>Dither</span><span class="dither-help" title="Adds a classic dot pattern for smoother shades" aria-hidden="true">?</span></label>
+      </div>
+
+      <div class="action-row">
+        <button id="convertBtn" class="button button-yellow" disabled><span aria-hidden="true">✣</span> Convert</button>
+        <button id="downloadBtn" class="button button-mint" disabled><span aria-hidden="true">↓</span> Download PNG</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Choose an image to start.</p>
+    </section>
+
+    <section class="previews" aria-label="Before and after image preview">
+      <article class="preview-card">
+        <h2>Original <span class="marker pink" aria-hidden="true"></span></h2>
+        <div class="preview-stage">
+          <div class="preview-empty" id="originalEmpty"><span class="empty-art" aria-hidden="true">▧</span><span>YOUR IMAGE</span></div>
+          <img id="originalImage" alt="Your original selected image" hidden>
+        </div>
+      </article>
+      <article class="preview-card">
+        <h2>8-bit <span class="marker mint" aria-hidden="true"></span></h2>
+        <div class="preview-stage pixel-stage">
+          <div class="preview-empty" id="outputEmpty"><span class="empty-art pixel-art" aria-hidden="true">▦</span><span>PIXELS HERE</span></div>
+          <img id="outputImage" alt="Your converted pixel art image" hidden>
+        </div>
+      </article>
+    </section>
+    <p class="privacy-promise"><span aria-hidden="true">▣</span> Your images stay on your device. Nothing is uploaded online.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Built by <a href="https://buildiful.com/">Buildiful®</a></span>
+      <div class="footer-links"><button id="analyticsSettings" type="button" aria-label="Privacy and analytics settings">Privacy</button><noscript><a href="./privacy.html">Privacy details</a></noscript><span>v1.0.0</span></div>
+    </div>
+  </footer>
+  <div id="analyticsConsentRoot"></div>
+</body>
+</html>
